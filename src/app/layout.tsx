@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import { Geist_Sans } from 'next/font/google'; // Corrected import
+import { Inter } from 'next/font/google'; // Changed from Geist_Sans
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
 import { CartProvider } from '@/context/CartContext';
 
-const geistSans = Geist_Sans({ // Corrected usage
-  variable: '--font-geist-sans',
+const inter = Inter({ // Changed from Geist_Sans to Inter
+  variable: '--font-inter', // Using a new variable name for Inter
   subsets: ['latin'],
 });
 
@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body className={`${geistSans.variable} antialiased font-sans`}> {/* Added font-sans for Tailwind */}
+      <body className={`${inter.variable} antialiased font-sans`}> {/* Use the new Inter font variable */}
         <CartProvider>
           <div className="flex flex-col min-h-screen">
             <Header />
