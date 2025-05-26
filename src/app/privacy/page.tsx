@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Datenschutz',
-  description: 'Datenschutzerklärung von Pizza Belami 2 - Belami Bites in Bremen.',
+  description: 'Datenschutzerklärung von Pizza Belami in Bremen.',
 };
 
 export default function PrivacyPage() {

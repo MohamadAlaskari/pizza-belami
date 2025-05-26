@@ -25,7 +25,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     setIsClient(true);
-    const storedCart = localStorage.getItem("belamiBitesCart");
+    const storedCart = localStorage.getItem("pizzaBelamiCart");
     if (storedCart) {
       setCartItems(JSON.parse(storedCart));
     }
@@ -33,7 +33,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     if (isClient) {
-      localStorage.setItem("belamiBitesCart", JSON.stringify(cartItems));
+      localStorage.setItem("pizzaBelamiCart", JSON.stringify(cartItems));
     }
   }, [cartItems, isClient]);
 

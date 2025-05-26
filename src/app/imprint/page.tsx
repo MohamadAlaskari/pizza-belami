@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Impressum',
-  description: 'Impressum von Pizza Belami 2 - Belami Bites in Bremen.',
+  description: 'Impressum von Pizza Belami in Bremen.',
 };
 
 export default function ImprintPage() {
@@ -16,7 +16,7 @@ export default function ImprintPage() {
         <CardContent className="space-y-4 text-muted-foreground">
           <h2 className="text-xl font-semibold text-foreground">Angaben gemäß § 5 TMG</h2>
           <p>
-            Pizza Belami 2 (Belami Bites)<br />
+            Pizza Belami<br />
             Inhaber: [Platzhalter für Inhabername]<br />
             Am Dobben 125<br />
             28203 Bremen
@@ -25,7 +25,7 @@ export default function ImprintPage() {
           <h3 className="text-lg font-semibold text-foreground mt-4">Kontakt</h3>
           <p>
             Telefon: 0421 / 123 45 67<br />
-            E-Mail: info@belamibites.de
+            E-Mail: info@pizzabelami.de
           </p>
 
           <h3 className="text-lg font-semibold text-foreground mt-4">Umsatzsteuer-ID</h3>

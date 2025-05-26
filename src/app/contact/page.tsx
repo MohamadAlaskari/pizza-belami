@@ -38,7 +38,7 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 // This needs to be defined in page.tsx or a Server Component
 // export const metadata: Metadata = {
 //   title: 'Kontakt',
-//   description: 'Kontaktieren Sie Pizza Belami 2 in Bremen. Adresse, Telefon, E-Mail und Kontaktformular.',
+//   description: 'Kontaktieren Sie Pizza Belami in Bremen. Adresse, Telefon, E-Mail und Kontaktformular.',
 // };
 
 function ContactForm() {
@@ -134,7 +134,7 @@ export default function ContactPage() {
   React.useEffect(() => {
     // This is a workaround if metadata can't be set directly in a client component.
     // Proper way is to have this page as a server component and import ContactForm as client.
-    document.title = "Kontakt | Belami Bites";
+    document.title = "Kontakt | Pizza Belami";
   }, []);
 
 
@@ -151,7 +151,7 @@ export default function ContactPage() {
         <Card className="shadow-lg">
           <CardHeader>
             <CardTitle className="text-2xl">Unsere Kontaktdaten</CardTitle>
-            <CardDescription>So erreichen Sie Pizza Belami 2:</CardDescription>
+            <CardDescription>So erreichen Sie Pizza Belami:</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex items-start gap-3">
@@ -172,13 +172,13 @@ export default function ContactPage() {
               <Mail className="h-6 w-6 text-primary mt-1 shrink-0" />
               <div>
                 <h3 className="font-semibold">E-Mail</h3>
-                <a href="mailto:info@belamibites.de" className="text-muted-foreground hover:text-primary">info@belamibites.de</a>
+                <a href="mailto:info@pizzabelami.de" className="text-muted-foreground hover:text-primary">info@pizzabelami.de</a>
               </div>
             </div>
             <div className="mt-4 aspect-video rounded-md overflow-hidden border">
               <Image 
                 src="https://placehold.co/600x400.png" 
-                alt="Karte von Bremen mit Standort von Pizza Belami 2" 
+                alt="Karte von Bremen mit Standort von Pizza Belami" 
                 width={600} 
                 height={400} 
                 className="w-full h-full object-cover"
@@ -205,5 +205,5 @@ export default function ContactPage() {
 // If this were a server component, metadata would be here:
 // export const metadata: Metadata = {
 //   title: 'Kontakt',
-//   description: 'Kontaktieren Sie Pizza Belami 2 in Bremen. Adresse, Telefon, E-Mail und Kontaktformular.',
+//   description: 'Kontaktieren Sie Pizza Belami in Bremen. Adresse, Telefon, E-Mail und Kontaktformular.',
 // };

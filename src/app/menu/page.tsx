@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Speisekarte',
-  description: 'Entdecken Sie unsere vielfältige Speisekarte bei Belami Bites. Pizza, Pasta, Burger, Salate und mehr online bestellen.',
+  description: 'Entdecken Sie unsere vielfältige Speisekarte bei Pizza Belami. Pizza, Pasta, Burger, Salate und mehr online bestellen.',
 };
 
 export default function MenuPage() {
