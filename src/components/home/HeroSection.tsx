@@ -6,13 +6,12 @@ export function HeroSection() {
   return (
     <section className="relative h-[calc(100vh-12rem)] min-h-[400px] md:h-[calc(100vh-8rem)] md:min-h-[500px] flex items-center justify-center text-center rounded-lg overflow-hidden shadow-lg">
       <Image
-        src="https://placehold.co/1200x800.png"
+        src="/hero-banner.jpg" // Updated to use the image from public folder
         alt="Leckere Pizza von Pizza Belami"
         layout="fill"
         objectFit="cover"
         quality={80}
         className="z-0"
-        data-ai-hint="gourmet pizza"
         priority
       />
       <div className="absolute inset-0 bg-black/50 z-10"></div>
