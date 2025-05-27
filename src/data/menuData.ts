@@ -1,3 +1,4 @@
+
 import type { MenuItem, ExtraItem } from '@/types';
 
 export const categories = ["Pizza", "Spezialpizzen", "Calzone", "Salate", "Burger", "Baguettes", "Rollos", "Snackys", "Desserts", "Getränke"];
@@ -10,17 +11,17 @@ export const availableExtrasList: ExtraItem[] = [
   { id: "extra-5", name: "Peperoni", price: 1.50 },
 ];
 
-export const menuData: MenuItem[] = [
-  // Pizza
+const newPizzas: MenuItem[] = [
+  // Category: Pizza
   {
-    id: "pizza-margherita",
+    id: "pizza-margarita",
     name: "Pizza Margherita",
-    description: "Tomatensauce, Käse und Oregano.",
+    description: "Tomatensauce, Käse und Oregano.", // Standard description
     category: "Pizza",
     options: [
       { size: "24cm", price: 7.00 },
       { size: "30cm", price: 9.00 },
-      { size: "40cm", price: 13.00 },
+      { size: "40cm", price: 12.50 },
     ],
     imageUrl: "https://placehold.co/300x200.png",
     aiHint: "margherita pizza",
@@ -28,55 +29,397 @@ export const menuData: MenuItem[] = [
     availableExtras: availableExtrasList,
   },
   {
-    id: "pizza-salami",
-    name: "Pizza Salami",
-    description: "Tomatensauce, Käse und Salami.",
+    id: "pizza-hawai",
+    name: "Pizza Hawai",
+    description: "mit Putenschinken, Ananas",
     category: "Pizza",
     options: [
-      { size: "24cm", price: 8.50 },
-      { size: "30cm", price: 10.50 },
-      { size: "40cm", price: 15.50 },
+      { size: "24cm", price: 10.00 },
+      { size: "30cm", price: 13.00 },
+      { size: "40cm", price: 17.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "hawaiian pizza",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "pizza-napoli",
+    name: "Pizza Napoli",
+    description: "mit Oliven, Mozzarella, Tomaten",
+    category: "Pizza",
+    options: [
+      { size: "24cm", price: 10.00 },
+      { size: "30cm", price: 13.50 },
+      { size: "40cm", price: 18.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "olive mozzarella pizza",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "pizza-tonno",
+    name: "Pizza Tonno",
+    description: "mit Thunfisch, Peperoni, Zwiebeln",
+    category: "Pizza",
+    options: [
+      { size: "24cm", price: 10.50 },
+      { size: "30cm", price: 15.50 },
+      { size: "40cm", price: 17.50 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "tuna pizza",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "pizza-spinaci",
+    name: "Pizza Spinaci",
+    description: "mit Knoblauch, Spinat, Weißkäse, Zwiebeln",
+    category: "Pizza",
+    options: [
+      { size: "24cm", price: 10.00 },
+      { size: "30cm", price: 13.00 },
+      { size: "40cm", price: 17.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "spinach cheese pizza",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "pizza-salami",
+    name: "Pizza Salami",
+    description: "mit Rindfleischsalami",
+    category: "Pizza",
+    options: [
+      { size: "24cm", price: 9.50 },
+      { size: "30cm", price: 12.50 },
+      { size: "40cm", price: 16.00 },
     ],
     imageUrl: "https://placehold.co/300x200.png",
     aiHint: "salami pizza",
     availableExtras: availableExtrasList,
   },
   {
-    id: "pizza-hawaii",
-    name: "Pizza Hawaii",
-    description: "Tomatensauce, Käse, Schinken und Ananas.",
+    id: "pizza-vegetarisch",
+    name: "Pizza Vegetarisch",
+    description: "mit Broccoli, Paprika, Champignons",
     category: "Pizza",
     options: [
-      { size: "24cm", price: 9.00 },
-      { size: "30cm", price: 11.50 },
+      { size: "24cm", price: 7.00 },
+      { size: "30cm", price: 13.50 },
+      { size: "40cm", price: 17.50 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "vegetarian pizza",
+    tags: ["vegetarian"],
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "pizza-mozzarella",
+    name: "Pizza Mozzarella",
+    description: "mit Mozzarella, Tomaten",
+    category: "Pizza",
+    options: [
+      { size: "24cm", price: 10.00 },
+      { size: "30cm", price: 13.50 },
+      { size: "40cm", price: 17.50 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "mozzarella tomato pizza",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "pizza-funghi",
+    name: "Pizza Funghi",
+    description: "mit Champignons",
+    category: "Pizza",
+    options: [
+      { size: "24cm", price: 9.50 },
+      { size: "30cm", price: 12.50 },
       { size: "40cm", price: 16.50 },
     ],
     imageUrl: "https://placehold.co/300x200.png",
-    aiHint: "hawaiian pizza",
+    aiHint: "mushroom pizza",
+    tags: ["vegetarian"],
     availableExtras: availableExtrasList,
   },
-  // Spezialpizzen
   {
-    id: "spezial-belami",
-    name: "Pizza Belami Spezial",
-    description: "Tomatensauce, Käse, Salami, Schinken, Champignons, Paprika, Zwiebeln.",
+    id: "pizza-schinken",
+    name: "Pizza Schinken",
+    description: "mit Putenschinken",
+    category: "Pizza",
+    options: [
+      { size: "24cm", price: 9.50 },
+      { size: "30cm", price: 12.50 },
+      { size: "40cm", price: 17.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "ham pizza",
+    availableExtras: availableExtrasList,
+  },
+  // Category: Spezialpizzen
+  {
+    id: "spezial-chicken",
+    name: "Pizza Chicken",
+    description: "mit Hähnchenfleisch, Zwiebel",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 10.50 },
+      { size: "30cm", price: 14.20 },
+      { size: "40cm", price: 16.90 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "chicken onion pizza",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-big-beef",
+    name: "Pizza Big Beef",
+    description: "mit Putenschinken, Jalapeños, Rindhackfleisch, Sauce Hollandaise",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 10.00 },
+      { size: "30cm", price: 13.50 },
+      { size: "40cm", price: 18.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "beef jalapenos pizza",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-kentucky",
+    name: "Pizza Kentucky",
+    description: "mit Hähnchenfleisch, Broccoli, Knoblauch, Creme Fraîche",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 10.50 },
+      { size: "30cm", price: 14.50 },
+      { size: "40cm", price: 18.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "chicken broccoli",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-chicken-delux",
+    name: "Pizza Chicken Delux",
+    description: "mit Hähnchenfleisch, Broccoli, Tomaten, Sauce",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 10.50 },
+      { size: "30cm", price: 14.50 },
+      { size: "40cm", price: 18.50 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "chicken broccoli tomato",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-mediterrane",
+    name: "Pizza Mediterrane",
+    description: "mit Paprika, Oliven, Hirtenkäse",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 10.50 },
+      { size: "30cm", price: 14.50 },
+      { size: "40cm", price: 17.50 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "mediterranean pizza",
+    tags: ["vegetarian"],
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-time",
+    name: "Pizza Time",
+    description: "mit Salami, Schinken, Champignon, Mozzarella",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 13.00 },
+      { size: "30cm", price: 16.50 },
+      { size: "40cm", price: 21.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "salami schinken pizza",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-beef-delux",
+    name: "Pizza Beef Delux",
+    description: "mit Rindfleisch, Mais, Hirtenkäse, BBQ-Sauce",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 12.00 },
+      { size: "30cm", price: 15.00 },
+      { size: "40cm", price: 19.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "beef corn pizza",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-salami-champignons",
+    name: "Pizza Salami & Champignons",
+    description: "mit Rindfleisch, Zwiebeln",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 10.00 },
+      { size: "30cm", price: 15.00 },
+      { size: "40cm", price: 17.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "salami mushroom",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-garnelen",
+    name: "Pizza Garnelen",
+    description: "mit Garnelen, Knoblauch, Tomaten, Zwiebeln",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 10.00 },
+      { size: "30cm", price: 13.00 },
+      { size: "40cm", price: 17.50 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "shrimp pizza",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-pute",
+    name: "Pizza Pute",
+    description: "mit Putenbrust, Mais, Paprika",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 10.00 },
+      { size: "30cm", price: 13.50 },
+      { size: "40cm", price: 17.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "turkey corn pizza",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-belami", // Replacing the old 'spezial-belami'
+    name: "Pizza Belami",
+    description: "mit Knoblauchwurst, Spinat, Weißkäse, Zwiebeln",
     category: "Spezialpizzen",
     options: [
       { size: "24cm", price: 10.50 },
       { size: "30cm", price: 13.50 },
+      { size: "40cm", price: 17.50 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "garlic sausage spinach",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-gerate",
+    name: "Pizza Gerate",
+    description: "mit Hähnchenbrust, Broccoli, Sauce Hollandaise",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 10.50 },
+      { size: "30cm", price: 15.50 },
+      { size: "40cm", price: 17.50 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "chicken broccoli hollandaise",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-frutti-di-mare",
+    name: "Pizza Frutti di Mare",
+    description: "mit Meeresfrüchten, Knoblauch, Spinat",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 10.00 },
+      { size: "30cm", price: 15.00 },
+      { size: "40cm", price: 18.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "seafood pizza",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-haehnchen-curry",
+    name: "Pizza Hähnchen-Curry",
+    description: "mit Hähnchenbrust, Currysoße",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 10.50 },
+      { size: "30cm", price: 13.50 },
+      { size: "40cm", price: 18.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "chicken curry pizza",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-hollandaise",
+    name: "Pizza Hollandaise",
+    description: "mit Hähnchenbrust, Broccoli, Sauce Hollandaise",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 11.00 },
+      { size: "30cm", price: 14.50 },
+      { size: "40cm", price: 20.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "chicken hollandaise",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-dodo",
+    name: "Pizza Dodo",
+    description: "mit Knoblauchwurst, Sauce Hollandaise, Zwiebeln, Spargel",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 10.50 },
+      { size: "30cm", price: 15.50 },
+      { size: "40cm", price: 18.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "sausage hollandaise asparagus",
+    availableExtras: availableExtrasList,
+  },
+  {
+    id: "spezial-mix",
+    name: "Pizza Mix",
+    description: "mit Hähnchenfleisch, Knoblauchwurst, Gemüse",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 11.50 },
+      { size: "30cm", price: 15.00 },
       { size: "40cm", price: 19.50 },
     ],
     imageUrl: "https://placehold.co/300x200.png",
-    aiHint: "specialty pizza",
+    aiHint: "mixed meat pizza",
     availableExtras: availableExtrasList,
   },
+  {
+    id: "spezial-kebab",
+    name: "Pizza Kebab",
+    description: "mit Kebabfleisch, Zwiebeln, Peperoni",
+    category: "Spezialpizzen",
+    options: [
+      { size: "24cm", price: 9.50 },
+      { size: "30cm", price: 12.50 },
+      { size: "40cm", price: 17.00 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "kebab pizza",
+    availableExtras: availableExtrasList,
+  },
+];
+
+const existingOtherItems: MenuItem[] = [
   // Calzone
   {
     id: "calzone-classic",
     name: "Calzone Classico",
     description: "Gefüllt mit Tomatensauce, Käse, Schinken, Salami und Champignons.",
     category: "Calzone",
-    options: [{ price: 11.00 }], // Single price/size for Calzone often
+    options: [{ price: 11.00 }], 
     imageUrl: "https://placehold.co/300x200.png",
     aiHint: "calzone",
     availableExtras: availableExtrasList,
@@ -155,6 +498,11 @@ export const menuData: MenuItem[] = [
   }
 ];
 
+export const menuData: MenuItem[] = [
+  ...newPizzas,
+  ...existingOtherItems
+];
+
 export const openingHoursData: Record<string, string> = {
   "Montag": "11:00 - 22:00",
   "Dienstag": "11:00 - 22:00",
@@ -165,3 +513,5 @@ export const openingHoursData: Record<string, string> = {
   "Sonntag": "12:00 - 22:00",
   "Feiertage": "12:00 - 22:00"
 };
+
+    
