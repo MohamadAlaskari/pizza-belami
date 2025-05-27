@@ -299,7 +299,7 @@ const newPizzas: MenuItem[] = [
     availableExtras: availableExtrasList,
   },
   {
-    id: "spezial-belami", // Replacing the old 'spezial-belami'
+    id: "spezial-belami", 
     name: "Pizza Belami",
     description: "mit Knoblauchwurst, Spinat, Weißkäse, Zwiebeln",
     category: "Spezialpizzen",
@@ -412,18 +412,71 @@ const newPizzas: MenuItem[] = [
   },
 ];
 
-const existingOtherItems: MenuItem[] = [
-  // Calzone
+const newBurgers: MenuItem[] = [
   {
-    id: "calzone-classic",
-    name: "Calzone Classico",
-    description: "Gefüllt mit Tomatensauce, Käse, Schinken, Salami und Champignons.",
-    category: "Calzone",
-    options: [{ price: 11.00 }], 
+    id: "burger-hamburger",
+    name: "Hamburger",
+    description: "100g Patty, Eisbergsalat, Tomaten, Gurken, Zwiebeln, Sauce",
+    category: "Burger",
+    options: [
+      { name: "1 Patty", price: 5.90 },
+      { name: "2 Patty", price: 7.70 },
+    ],
     imageUrl: "https://placehold.co/300x200.png",
-    aiHint: "calzone",
-    availableExtras: availableExtrasList,
+    aiHint: "hamburger",
   },
+  {
+    id: "burger-cheeseburger",
+    name: "Cheeseburger",
+    description: "100g Patty, Eisbergsalat, Tomaten, Gurken, Zwiebeln, Sauce, Käse",
+    category: "Burger",
+    options: [
+      { name: "1 Patty", price: 6.90 },
+      { name: "2 Patty", price: 8.90 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "cheeseburger",
+  },
+  {
+    id: "burger-chickenburger",
+    name: "Chickenburger",
+    description: "Eisbergsalat, Tomate, Gurken, Zwiebeln, Sauce",
+    category: "Burger",
+    options: [
+      { name: "1 Patty", price: 5.90 },
+      { name: "2 Patty", price: 7.70 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "chicken burger",
+  },
+  {
+    id: "burger-veggie",
+    name: "Veggie Burger",
+    description: "Champignons",
+    category: "Burger",
+    options: [
+      { name: "1 Patty", price: 5.50 },
+      { name: "2 Patty", price: 7.50 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "veggie burger",
+    tags: ["vegetarian"],
+  },
+  {
+    id: "burger-spezial-cheeseburger",
+    name: "Spezial Cheeseburger",
+    description: "100g Patty, Eisbergsalat, Tomaten, Gurke, Zwiebeln, Jalapenos, Soße, Käse",
+    category: "Burger",
+    options: [
+      { name: "1 Patty", price: 7.50 },
+      { name: "2 Patty", price: 9.50 },
+    ],
+    imageUrl: "https://placehold.co/300x200.png",
+    aiHint: "special cheeseburger",
+  },
+];
+
+const existingOtherItems: MenuItem[] = [
   // Salate
   {
     id: "salat-mista",
@@ -435,16 +488,6 @@ const existingOtherItems: MenuItem[] = [
     aiHint: "mixed salad",
     tags: ["vegetarian"],
   },
-  // Burger
-  {
-    id: "burger-classic",
-    name: "Classic Burger",
-    description: "Rindfleisch-Patty, Salat, Tomate, Zwiebeln, Sauce.",
-    category: "Burger",
-    options: [{ price: 9.50 }],
-    imageUrl: "https://placehold.co/300x200.png",
-    aiHint: "classic burger",
-  },
   // Baguettes
   {
     id: "baguette-salami",
@@ -454,16 +497,6 @@ const existingOtherItems: MenuItem[] = [
     options: [{ price: 8.00 }],
     imageUrl: "https://placehold.co/300x200.png",
     aiHint: "salami baguette",
-  },
-  // Rollos
-  {
-    id: "rollo-chicken",
-    name: "Rollo Chicken",
-    description: "Gefüllt mit Hähnchenfleisch, Salat, Zwiebeln und Sauce.",
-    category: "Rollos",
-    options: [{ price: 9.00 }],
-    imageUrl: "https://placehold.co/300x200.png",
-    aiHint: "chicken wrap",
   },
   // Snackys
   {
@@ -500,7 +533,8 @@ const existingOtherItems: MenuItem[] = [
 
 export const menuData: MenuItem[] = [
   ...newPizzas,
-  ...existingOtherItems
+  ...newBurgers,
+  ...existingOtherItems.filter(item => !["Calzone", "Rollos", "Burger"].includes(item.category)) // Remove old burgers, calzones, rollos
 ];
 
 export const openingHoursData: Record<string, string> = {
