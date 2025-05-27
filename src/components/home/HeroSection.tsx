@@ -12,7 +12,7 @@ export function HeroSection() {
         objectFit="cover"
         quality={80}
         className="z-0"
-        data-ai-hint="pizza restaurant interior"
+        data-ai-hint="gourmet pizza"
         priority
       />
       <div className="absolute inset-0 bg-black/50 z-10"></div>

@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   },
   description: 'Leckere Pizza, Burger, Salate und mehr von Pizza Belami in Bremen. Jetzt online bestellen!',
   keywords: ['Pizza', 'Pizza Belami', 'Bremen', 'Restaurant', 'Lieferservice', 'Online bestellen'],
+  other: {
+    'apple-mobile-web-app-title': 'Pizza Belami',
+  },
 };
 
 export default function RootLayout({
