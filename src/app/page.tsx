@@ -38,7 +38,7 @@ export default function HomePage() {
           </p>
           <div className="flex justify-center gap-4">
             <video 
-              src="https://placehold.co/600x337.mp4/E5472E/F2EFE9?text=Pizza+Belami+Promo" 
+              src="/videos/restaurant-cooking.mp4" 
               width="600" height="337" 
               controls 
               className="rounded-lg shadow-md"
